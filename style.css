@@ -1,0 +1,70 @@
+:root {
+    --table-height: calc(100vh - 60.4px);
+    --cessboard-height: calc(var(--table-height) / 100 * 85);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    border: solid 2px red;
+
+    .timer {
+        margin: 15px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .table {
+        height: var(--table-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: solid 2px black;
+    }
+
+    .table .player {
+        width: 150px;
+        height: var(--cessboard-height);
+        border: solid 2px orange;
+    }
+
+    .table .chessboard {
+        width: var(--cessboard-height);
+        height: var(--cessboard-height);
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+        border: solid 3px black;
+    }
+
+    .square.black {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+
+        .pawn {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+
+            img {
+                max-width: 100%;
+            }
+        } 
+    }
+
+    .square.black.free {
+        background-color: rgba(125, 255, 38, 0.8);
+      }
+    .square.black.occupied {
+        background-color: rgb(255, 0, 0, 0.8);
+      }
+
+
+}
